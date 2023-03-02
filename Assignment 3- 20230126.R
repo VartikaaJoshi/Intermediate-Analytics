@@ -114,8 +114,6 @@ test_data$pred <- predict(model,test_data, type="response")
 test_data$pred_label <- as.factor(ifelse(test_data$pred >= 0.5, "Yes","No"))
 confusionMatrix(test_data$Private, test_data$pred_label)
 
-
-
 #Roc curve
 rocobj <- roc(as.ordered(test_data$Private), as.ordered(test_data$pred_label), ordered = TRUE)
 
